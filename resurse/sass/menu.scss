@@ -1,0 +1,357 @@
+// 1. Variabile SASS pentru valori repetitive
+$menu-padding: 1rem;
+$menu-bg: var(--menu-bg);
+$menu-color: var(--menu-color);
+$menu-hover-color: var(--menu-hover-color);
+$submenu-bg: var(--submenu-bg);
+$submenu-shadow: 0 4px 16px rgba(0,0,0,0.1);
+$transition-fast: 0.2s;
+$transition-slow: 0.35s;
+$menu-font-size: 1.2rem;
+$menu-font-size-md: 1rem;
+$menu-font-size-sm: 0.95rem;
+$menu-border-radius: 0.5rem;
+
+// 2. Variabile CSS pentru temă (de pus în body)
+body {
+  --menu-bg: #80D884;
+  --menu-color:white;
+  --menu-hover-color: white;
+  --submenu-bg: #f8f8f8;
+  --submenu-bar-gradient: linear-gradient(to bottom, #fff, #000);
+}
+
+// 3. Mixin pentru animația de scalare submeniu
+@mixin submenu-scale($axis: y) {
+  transform: scale#{$axis}(0);
+  transform-origin: top;
+  transition: transform $transition-slow;
+  pointer-events: none;
+  opacity: 0;
+  display: block;
+}
+@mixin submenu-scale-active($axis: y) {
+  transform: scale#{$axis}(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+// 4. Mixin pentru bare gradient la hover submeniu
+@mixin submenu-bar($side) {
+  content: "";
+  position: absolute;
+  top: 0;
+  #{$side}: -10px;
+  width: 6px;
+  height: 0;
+  background: var(--submenu-bar-gradient);
+  border-radius: 3px;
+  transition: height $transition-slow;
+  display: block;
+  z-index: 2;
+}
+
+
+// 5. Meniu principal desktop
+#variante-meniu {
+  background: $menu-bg;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  .menu-item {
+    position: relative;
+    font-size: $menu-font-size;
+    border-radius: $menu-border-radius;
+    transition: background $transition-fast;
+    a {
+      color: $menu-color;
+      text-decoration: none;
+      padding: $menu-padding $menu-padding;
+      display: flex;
+      align-items: center;
+      transition: font-size $transition-slow, color $transition-fast;
+    }
+    // Hover: creștere dimensiune text
+    &:hover > a, &.active > a {
+      font-size: $menu-font-size * 1.18;
+      color: $menu-hover-color;
+    }
+    // Submeniu desktop
+    &.has-submenu {
+      > .submenu {
+        @include submenu-scale(y);
+        position: absolute;
+        left: 0;
+        top: 100%;
+        min-width: 220px;
+        background: $submenu-bg;
+        box-shadow: $submenu-shadow;
+        border-radius: $menu-border-radius;
+        z-index: 10;
+        background-color: #80D884;
+      }
+      &:hover > .submenu, &:focus-within > .submenu {
+        @include submenu-scale-active(y);
+      }
+   .submenu li {
+  position: relative;
+  a {
+    display: block;
+    padding: 0.7rem 1.5rem;
+    transition: background $transition-fast, color $transition-fast;
+  }
+
+  // Gradient bar left
+  &::before {
+    @include submenu-bar(left);
+    height: 0;
+  }
+  // Gradient bar right
+  &::after {
+    @include submenu-bar(right);
+    height: 0;
+  }
+
+  &:hover, &:focus-within {
+    a {
+      color: $menu-hover-color;
+      background: #66BB6A;
+    }
+    &::before,
+    &::after {
+      height: 100%;
+      transition: height $transition-slow;
+    }
+  }
+}
+    }}}
+// 6. Responsive - Ecran mediu și mare
+@media (max-width: 1024px) and (min-width: 600px) {
+  #variante-meniu ul {
+    gap: 1.2rem;
+  }
+  #variante-meniu .menu-item {
+    font-size: $menu-font-size-md;
+    a { padding: 0.7rem 0.8rem; }
+    &.acasa .text-acasa { display: none; }
+    &.acasa .icon-casa { display: inline-block; }
+  }
+}
+
+// 7. Meniu mobil cu checkbox și drawer
+#variante-meniu {
+  position: relative;
+  z-index: 1000;
+
+  #menu-toggle {
+    display: none;
+  }
+
+  #burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 44px;
+    height: 44px;
+    position: fixed;
+    top: 1.5rem;
+    left: 1.5rem;
+    z-index: 1200;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    span {
+      display: block;
+      width: 36px;
+      height: 5px;
+      margin: 5px 0;
+      background: #fff;
+      border-radius: 3px;
+      transition: 0.3s;
+    }
+  }
+
+  .menu-drawer {
+    position: fixed;
+    top: 0; left: 0; bottom: 0;
+    width: 100vw;
+    height: 70vh;
+    max-width: 100vw;
+    background:#80D884;
+    color: #fff;
+    transform: translateX(-100%);
+    transition: transform 0.45s cubic-bezier(.77,0,.18,1);
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; 
+    align-items: center;
+    padding-top: 3.5rem;
+    overflow-y: auto;
+
+    ul {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .menu-item {
+      text-align: center;
+      width: 100%;
+      a {
+        color: #fff;
+        font-size: 1.5rem;
+        text-decoration: none;
+        font-weight: bold;
+        transition: none;
+        display: block;
+        padding: 0.5rem 0;
+        background: transparent !important;
+      }
+      .icon-casa {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        display: block;
+      }
+      &.has-submenu {
+        > a {
+          font-size: 1.4rem;
+          margin-bottom: 0.5rem;
+        }
+        > .submenu {
+          background:#80D884 !important;   
+          color: #fff !important;        
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.7rem;
+          margin-bottom: 1rem;
+          li a {
+            font-size: 1.1rem;
+            font-weight: normal;
+            color: #fff !important;
+            background: transparent !important;
+            opacity: 1 !important;
+            text-align: center;
+            padding: 0.5rem 0;
+            border-radius: 0;
+            transition: none;
+          }
+          li a:hover,
+          li a:focus {
+            color: #fff !important;
+            background: transparent !important;
+          }
+        }
+      }
+    }
+    .acasa {
+      margin-bottom: 2.5rem;
+      a {
+        pointer-events: none;
+      }
+    }
+  }
+
+  #menu-toggle:checked ~ .menu-drawer {
+    transform: translateX(0);
+  }
+
+  @media (max-width: 500px) {
+  #variante-meniu .main-menu { display: none !important; }
+  #variante-meniu .menu-drawer { display: flex !important; }
+  #burger { display: flex !important; }
+}
+@media (min-width: 501px) {
+  #variante-meniu .main-menu { display: flex !important; }
+  #variante-meniu .menu-drawer,
+  #burger,
+  #menu-toggle { display: none !important; }
+}
+@media (max-width: 500px) {
+  .menu-drawer .submenu li a {
+    font-size: 1.1rem;
+    font-weight: normal;
+    color: #fff !important;
+    background: transparent !important;
+    opacity: 1 !important;
+    text-align: center;
+    padding: 0.5rem 0;
+    border-radius: 0;
+    transition: font-size 0.3s ease, color 0.2s ease;
+  }
+  .menu-drawer .submenu li a:hover,
+  .menu-drawer .submenu li a:focus {
+    font-size: 1.3rem !important;  // crește dimensiunea textului
+    color: #fff !important;
+    background: transparent !important;
+  }
+   .submenu li::before,
+  .submenu li::after {
+    height: 0 !important;
+    display: none !important;
+}
+}
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(#{numRows}, 200px); /* vezi mai jos */
+  gap: 10px;
+  border-image: url('/resurse/imagini/border.png') 30 round;
+  border-style: solid;
+  border-width: 20px;
+}
+
+.gallery-item {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  clip-path: circle(100% at 50% 50%);
+  animation: clipAnim 6s linear infinite;
+  animation-delay: calc(var(--index) * 2s);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.gallery-item:nth-child(1) {
+  opacity: 1;
+  position: relative;
+}
+
+.gallery-container:hover .gallery-item {
+  animation-play-state: paused;
+}
+
+@keyframes clipAnim {
+  0% {
+    clip-path: circle(100% at 50% 50%);
+    opacity: 1;
+  }
+  50% {
+    clip-path: circle(0% at 50% 50%);
+    opacity: 0;
+  }
+  100% {
+    clip-path: circle(0% at 50% 50%);
+    opacity: 0;
+  }
+}
+
+/* Ascunde pe ecrane medii și mici */
+@media (max-width: 992px) {
+  .gallery-container {
+    display: none;
+  }
+}

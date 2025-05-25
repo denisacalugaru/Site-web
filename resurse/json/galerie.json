@@ -1,0 +1,112 @@
+{
+  "cale_galerie": "/resurse/imagini/galerie/",
+  "imagini": [
+    {
+      "cale_relativa": "buchet_bujori.jpg",
+      "nume_imag": "Buchet bujori",
+      "alternativ": "Buchet de bujori roz",
+      "descriere_imag": "Bujorii roz-cadou ideal pentru doamne și domnișoare în perioada aceasta",
+      "intervale_ore": [[2,7],[14,16],[22,23]]
+    },
+    {
+      "cale_relativa": "buchet_lalele.jpg",
+      "nume_imag": "Buchet lalele",
+      "alternativ": "Buchet de lalele",
+      "descriere_imag": "Nu poți da niciodată greș cu un buchet de lalele roșii",
+      "intervale_ore": [[6,12],[18,20]]
+    },
+    {
+      "cale_relativa": "buchet_flori_camp.jpg",
+      "nume_imag": "Buchet flori de câmp",
+      "alternativ": "Buchet flori de câmp",
+      "descriere_imag": "Un buchet ideal pentru iubitorii de sălbăticie",
+      "intervale_ore": [[6,9],[18,20]]
+    },
+    {
+      "cale_relativa": "tp.jpg",
+      "nume_imag": "Trandafiri portocalii și albii",
+      "alternativ": "Buchet de trandafiri portcoalii",
+      "descriere_imag": "Un buchet elegant și rafinat de trandafiri portoclaii",
+      "intervale_ore": [[5,8]]
+    },
+    {
+      "cale_relativa": "fs.jpg",
+      "nume_imag": "Floarea soarelui",
+      "alternativ": "Floarea soarelui ",
+      "descriere_imag": "Buchet de floarea soarelui superb",
+      "intervale_ore": [[17,20]]
+    },
+    {
+      "cale_relativa": "tr.jpg",
+      "nume_imag": "Trandafiri roz",
+      "alternativ": "Buchet de trandafiri roz",
+      "descriere_imag": "Flori roz de primăvara",
+      "intervale_ore": [[8,12]]
+    },
+    
+    {
+      "cale_relativa": "ar.jpg",
+      "nume_imag": "Aranjament floral",
+      "alternativ": "Aranjament de flori",
+      "descriere_imag": "Un aranjament ideal pentru casa dvs",
+      "intervale_ore": [[12,16]]
+    },
+    
+    {
+      "cale_relativa": "lac.jpg",
+      "nume_imag": "Lăcrămioare",
+      "alternativ": "Buchețel de lăcrămioare",
+      "descriere_imag": "Lăcrămioarele-cele mai delicate și firave flori",
+      "intervale_ore": [[0,23]]
+    },
+    {
+      "cale_relativa": "la.jpg",
+      "nume_imag": "Lalele albe",
+      "alternativ": "Floare albă",
+      "descriere_imag": "Floare albă delicată",
+      "intervale_ore": [[6,11]]
+    },
+    {
+      "cale_relativa": "crin.jpg",
+      "nume_imag": "Crini",
+      "alternativ": "Crini portocalii",
+      "descriere_imag": "Crinii sunt florile ideale pentru personalități puternice",
+      "intervale_ore": [[14,18]]
+    },
+    {
+      "cale_relativa": "orh.jpg",
+      "nume_imag": "Orhidee",
+      "alternativ": "Flori orhidee",
+      "descriere_imag": "Floarea iubită de toate mamele",
+      "intervale_ore": [[7,13]]
+    },
+    {
+      "cale_relativa": "marg.jpg",
+      "nume_imag": "Margarete",
+      "alternativ": "Buchețel de margarete",
+      "descriere_imag": "Un exemplu de buchet atipic pentru iubitorii de natură",
+      "intervale_ore": [[9,17]]
+    },
+    {
+      "cale_relativa": "texas.jpg",
+      "nume_imag": "Clopoțel de Texas",
+      "alternativ": "Floare Lisianthus",
+      "descriere_imag": "Probabil nu ai auzit de această floare, dar cu siguranță te-a cucerit aspectul ei",
+      "intervale_ore": [[8,18]]
+    },
+    {
+      "cale_relativa": "ccby.jpg",
+      "nume_imag": "Floare CC-BY",
+      "alternativ": "Buchet atipic",
+      "descriere_imag": "Floare foto de david.orban (CC-BY)",
+      "intervale_ore": [[8,15]],
+      "atributii": {
+        "autor": "david.orban",
+        "sursa": "https://openverse.org/image/ef1da979-9356-4aa8-bf9b-990500903b31?q=bouque&p=12",
+        "licenta": "CC-BY"
+    }
+}
+    
+  ]
+  
+}

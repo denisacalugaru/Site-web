@@ -1,0 +1,59 @@
+.gallery-container {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  overflow: hidden;
+  border: 20px solid transparent;
+  border-image: url('/resurse/imagini/poster.jpg') 30 round;
+}
+
+.gallery-frame {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  clip-path: inset(0 50% 0 50%);
+  transition: opacity 1s ease;
+}
+
+.gallery-frame.active {
+  opacity: 1;
+  animation: openFromCenter 3s forwards;
+}
+
+@keyframes openFromCenter {
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.gallery-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-container:hover .gallery-frame {
+  animation-play-state: paused;
+}
+@media screen and (max-width: 768px) {
+  .gallery-container {
+    display: none;
+  }
+}
+
+/* Title bar styling */
+.title-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+  color: white;
+  padding: 10px 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  box-sizing: border-box;
+  text-align: center;
+  user-select: none;
+}

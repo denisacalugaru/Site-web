@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <%- include ('../fragmente/head') %>
+<body id="top">
+  <div class="watermark">
+    CĂLUGĂRU<br>MARIA-DENISA
+  </div>
+
+  <%- include('../fragmente/header') %>
+
+  <main>
+    <section id="prezentare">
+      <h2><em>ScaiGarden - Florăria ideală pentru orice eveniment special din viața dumneavoastră</em></h2>
+      <p>Descoperă <b>buchete personalizate</b>, <b>aranjamente florale</b> și <b>plante decorative</b> create cu pasiune pentru a aduce bucurie în fiecare moment. Oferim flori proaspete și servicii de livrare prompte pentru toate ocaziile.</p>
+      <p>
+        <%- include('../fragmente/galerie', { cale_galerie: cale_galerie, imagini: imagini }) %>
+
+
+        <i class="fa-solid fa-heart fa-beat"></i> Vă invităm să vizionați ofertele noastre speciale!
+      </p>
+    </section>
+    <section id="tabel">
+      <h2>Oferte Speciale</h2>
+      <div class="table-container">
+        <table>
+          <caption>Oferte Speciale Disponibile Acum</caption>
+          <thead>
+            <tr>
+              <th>Produs</th>
+              <th>Preț</th>
+              <th>Descriere</th>
+              <th>Disponibilitate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Buchet Trandafiri Roșii (11 fire)</td>
+              <td>79.99 RON</td>
+              <td>Un simbol clasic al iubirii și pasiunii.</td>
+              <td>În stoc</td>
+            </tr>
+            <tr>
+              <td>Aranjament Floral "Primăvara Înfloritoare"</td>
+              <td>129.99 RON</td>
+              <td>Un mix vibrant de flori de sezon.</td>
+              <td>Limitat</td>
+            </tr>
+            <tr>
+              <td>Orhidee Phalaenopsis Albă</td>
+              <td>99.99 RON</td>
+              <td>Eleganță și rafinament pentru orice interior.</td>
+              <td>În stoc</td>
+            </tr>
+            <tr>
+              <td>Crizanteme</td>
+              <td>49.99 RON</td>
+              <td>Diverse culori</td>
+              <td>În stoc</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="4">Prețurile includ TVA</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+    <section id="calendar">
+      <h2>Calendar Evenimente</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </section>
+    <section id="anunturi">
+      <h2>Anunțuri</h2>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </section>
+    <section id="online">
+      <h2>Utilizatori Online</h2>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <i class="fa-solid fa-chart-pie fa-spin"></i>
+    </section>
+    <section id="statistici">
+      <h2>Date Utilizator & Statistici</h2>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <i class="fa-solid fa-chart-pie fa-spin"></i>
+    </section>
+    <section id="server">
+      <h2>Date Site & Server</h2>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </section>
+    <section id="diverse">
+      <section id="acasa">
+        <section id="produse">
+          <h2><em>Produse</em></h2>
+          <ul>
+            <li>Buchete de flori</li>
+            <li><b>Aranjamente florarle</b></li>
+            <li>Plante decorative</li>
+          </ul>
+          <p>Vă prezentăm cele mai populare flori adorate de mulți cumpărători, mai ales în perioada primăverii!</p>
+          <img src="/resurse/ico/top.jpg" alt="Imagine cu tipurile noastre de flori" usemap="#harta" width="600" height="400">
+
+          <map name="harta">
+            <area shape="rect" coords="0,0,200,400" href="#gardenie" alt="Gardenie" title="Vezi recenzie despre gardenie">
+            <area shape="rect" coords="200,0,400,400" href="#bujor" alt="Bujor  roz" title="Vezi recenzie despre bujorul roz">
+            <area shape="rect" coords="400,0,600,400" href="#lăcrămioara" alt="Lăcrămioara" title="Vezi recenzie despre lăcrămioara">
+          </map>
+        </section>
+      </section>
+
+      <section id="despre">
+        <h2><em>Despre noi</em></h2>
+        <section id="poveste">
+          <h3>Povestea Florăriei</h3>
+          <p>ScaiGarden a luat naștere în 2022, din pasiunea noastră pentru flori și dorința de a aduce bucurie prin aranjamente unice. Inspirată de motanul nostru Scai, având numele preluat de la planta ce reprezintă rezistența naturii și frumusețea ei neîmblânzită, florăria noastră combină eleganța naturii cu personalitatea puternică a fiecărui buchet. De atunci, am crescut alături de clienții noștri, oferind buchete personalizate cu un strop de emoție în fiecare comandă.</p>
+        </section>
+      </section>
+      <figure>
+        <picture>
+          <source srcset="/resurse/ico/florarie_mica.jpg" media="(max-width: 600px)">
+          <source srcset="/resurse/ico/florarie_medie.jpg" media="(max-width: 1024px)">
+          <img src="/resurse/ico/florarie_mare.jpg" alt="Imagine cu florăria ScaiGarden">
+        </picture>
+        <figcaption>ScaiGarden - Florărie cu tradiție și pasiune pentru flori.</figcaption>
+      </figure>
+      <figure class="duotone">
+        <picture>
+          <img src="/resurse/ico/scai1.jpg" alt="Imagine cu Scai">
+        </picture>
+        <figcaption>Motanul Scai, inspirația pentru florăria ScaiGarden</figcaption>
+      </figure>
+
+    
+  <section class="section-content">
+        <h2>Echipa Scaigarden</h2>
+        <p>La Scaigarden, suntem o echipă dedicată pasiunii pentru floră și design peisagistic. Creăm spații verzi unice, pline de viață și emoție, adaptate fiecărui client.</p>
+    </section>
+
+      <section id="echipa">
+        <p>Echipa noastră este formată din <b>designeri florali talentați</b>, pasionați de crearea unor <b>aranjamente florale</b> și <b>buchete personalizate</b> deosebite. Fiecare membru contribuie cu creativitate și atenție la detalii pentru ca fiecare comandă să fie perfectă. Ne dedicăm să oferim nu doar flori, ci și emoții prin fiecare livrare.</p>
+      </section>
+    <hr class="stilizat-hr"> <section class="section-content">
+        <h2>Recenzii de la Clienți</h2>
+        <p>Următoare secțiune este destinată recenziilor primite de la clienții noștri. Aici poți descoperi experiențele și părerile celor care au ales Scaigarden.</p>
+    </section>
+
+      <aside id="recenzii">
+        <q id="gardenie">Am comandat un ghiveci de gardenii pentru bunica mea și i-a plăcut foarte mult! Livrare rapidă și servicii excelente! Recomand cu drag!</q>
+        <p>- Maria Popescu</p>
+        <q id="bujor">Am comandat un buchet de bujori pentru aniversarea mamei mele și a fost minunat! Mulțumesc ScaiGarden!</q>
+        <p>- Andrei Ionescu</p>
+        <q id="lacramioara">Am comandat un buchețel de lăcrămioare pentru cununia civilă și am fost foarte mulțumită!Recomand</q>
+        <p>- Busuioc Andreea</p>
+      </aside>
+
+      <section id="video-prezentare">
+  <h2>Realizarea unui buchet de flori</h2>
+  <video controls preload="metadata" poster="/resurse/imagini/poster.jpg" class="responsive-video">
+    <source src="/resurse/video/buchet.mp4" type="video/mp4" />
+    <source src="/resurse/video/buchet.webm" type="video/webm" />
+    <track src="/resurse/video/ro.vtt" kind="subtitles" srclang="ro" label="Română" default />
+    <track src="/resurse/video/en.vtt" kind="subtitles" srclang="en" label="English" />
+    Browserul tău nu suportă elementul video.
+  </video>
+</section>
+
+      <section id="comenzi">
+        <h2><em>Comenzi și livrare</em></h2>
+         <article id="plata">
+       <h3 class="reflected-heading" data-reflection-text="Modalități de Plată">Modalități de Plată</h3>
+        <p>Oferim mai multe opțiuni de plată pentru confortul tău:</p>
+        <dl>
+            <dt>Card bancar</dt>
+            <dd>Plată securizată online prin Visa, Mastercard.</dd>
+            <dt>Ramburs</dt>
+            <dd>Plata în numerar la livrare.</dd>
+        </dl>
+    </article>
+
+        <article id="politica">
+          <h3>Politica de Livrare și Retur</h3>
+          <p>Aflați mai multe despre politica noastră de retur pentru <b>comenzi online flori</b>.</p>
+          <h4>Livrare</h4>
+          <p>Livrarea este in termen de 24-48 de ore de la confirmarea comenzii, în funcție de zona dvs și de complexitatea produsului comandat.</p>
+          <p>Costul livrării variază în funcție de locație și valoarea comenzii.</p>
+          <h4>Calculul costului livrării</h4>
+          <p>Taxa fixă de livrare pe o rază de 15km este de 10RON</p>
+          <h4>Calculul costului livrării</h4>
+          <p>Costul livrării pe o rază mai mare de 15km este calculat astfel:</p>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>Cost</mi><mo>=</mo> <mi>Taxă</mi><mo>+</mo> <mi>Distanță</mi><mo>×</mo> <mi>P</mi>
+          </math>
+          <p>unde P e pretul pe km</p>
+
+          <h4>Retur și reclamații</h4>
+          <p>În cazul în care nu ești mulțumit de produsul primit, ne poți contacta în termen de 24 de ore de la livrare pentru a solicita un schimb sau un retur.</p>
+          <p>Reclamațiile se pot face prin formularul de contact sau telefonic, iar echipa noastră va încerca să rezolve orice problemă cât mai rapid.</p>
+          <section>
+            <h4>Întrebări frecvente</h4>
+            <details>
+              <summary>Cât durează livrarea florilor?</summary>
+              <p>Livrarea florilor durează între 24 și 48 ore, în funcție de locație.</p>
+            </details>
+            <details>
+              <summary>Pot personaliza buchetul de flori?</summary>
+              <p>Da, puteți personaliza buchetul alegând florile preferate și mesajul pentru destinatar.</p>
+            </details>
+            <details>
+              <summary>Oferiți reduceri pentru comenzile mari?</summary>
+              <p>.Nu, momentan nu oferim reduceri pentru niciun tip de comandă</p>
+            </details>
+          </section>
+        </article>
+         <section id="sfaturi">
+                    <h3><em>Îngrijirea buchetelor de flori</em></h3>
+                    <p>Pentru a păstra buchetele de flori proaspete pentru o perioadă mai lungă, este important să urmați câteva sfaturi esențiale. Informații detaliate și trucuri utile puteți găsi pe site-ul <a href="https://florariadevis.ro/ghidul-incepatorului-pentru-ingrijirea-florilor/?srsltid=AfmBOorW5hX-IEMtYUVQKvngdTJ5vsYdPNsrFjG35coNCbhjCNuDgfSy" target="_blank" rel="noopener noreferrer">Ghidul începătorului pentru îngrijirea florilor</a>.</p>
+                    <div class="video-container">
+                        <div class="video-links">
+                            <a href="https://www.youtube.com/embed/LBUxp5EbXD8" target="video_iframe">Cum să păstrezi florile proaspete</a>
+                            <a href="https://www.youtube.com/embed/4dx9AKW_P88" target="video_iframe">Sfaturi pentru îngrijirea plantelor</a>
+                        </div>
+                        <iframe name="video_iframe" width="560" height="315" src="https://www.youtube.com/embed/LBUxp5EbXD8" allowfullscreen></iframe>
+                    </div>
+
+                </section>
+
+
+                <section id="contact">
+                    <h3>Formular de Contact</h3>
+                </section>
+
+                <section>
+                    <h3>Program și Locație</h3>
+                    <p>Program: Luni - Vineri: 9:00 - 18:00, Sâmbătă: 10:00 - 14:00</p>
+                    <p>Ne găsești în centrul orașului București, la Facultatea de Matematică și Informatică din cadrul Universității din București</p>
+                </section>
+
+                <section>
+                    <h3>Urmărește-ne pe Social Media</h3>
+                    <p>Fii la curent cu cele mai noi <b>oferte speciale de flori</b>!</p>
+                    <ul>
+                        <li><a href="https://www.facebook.com/fmi.ub/">Facebook</a></li>
+                    </ul>
+                </section>
+            </section>
+        </section>
+
+    </main>
+
+
+  <%- include ('../fragmente/footer') %>
+</body>
+</html>

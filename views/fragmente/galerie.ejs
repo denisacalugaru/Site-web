@@ -1,0 +1,24 @@
+<div class="galerie-grid">
+  <% let poz = 0; %>
+  <% let randuri = Math.ceil(imagini.length / 2); %>
+  <% for(let i = 0; i < randuri; i++) { %>
+    <% for(let j = 0; j < 3; j++) { %>
+      <% 
+        let poz_gol;
+        if (i % 4 === 0) poz_gol = 0;
+        else if (i % 4 === 1 || i % 4 === 3) poz_gol = 1;
+        else if (i % 4 === 2) poz_gol = 2;
+      %>
+      <% if (j === poz_gol) { %>
+        <div class="gol"></div>
+      <% } else if (poz < imagini.length) { %>
+        <% let img = imagini[poz]; %>
+        <figure>
+          <img src="<%= cale_galerie + img.cale_relativa %>" alt="<%= img.nume_imag %>">
+          <figcaption><%= img.nume_imag %></figcaption>
+        </figure>
+        <% poz++; %>
+      <% } %>
+    <% } %>
+  <% } %>
+</div>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ScaiGarden - <%= titlu %></title>
+  <link rel="stylesheet" href="/resurse/css/eroare.css" />
+  <%- include("../fragmente/head") %>
+</head>
+<body>
+  <%- include("../fragmente/header") %>
+
+  <main>
+    <div id="eroare-container">
+      <div id="eroare-imagine">
+      <img src="<%= imagine %>" alt="Eroare <%= titlu %>" class="eroare-imagine" />
+
+
+
+      </div>
+      <section id="eroare-text">
+        <h1><%= titlu %></h1>
+        <p><%= text %></p>
+      </section>
+    </div>
+  </main>
+  <%- include("../fragmente/footer") %>
+</body>
+</html>

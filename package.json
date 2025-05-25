@@ -1,0 +1,23 @@
+{
+  "name": "scaigarden",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "florărie online, livrare flori, buchete personalizate, comenzi online flori, aranjamente florale, plante decorative, oferte speciale flori"
+  ],
+  "author": "Călugăru Maria-Denisa",
+  "license": "ISC",
+  "description": "ScaiGarden - Florărie online cu buchete personalizate, livrare flori rapidă, comenzi online flori, aranjamente florale și plante decorative. Oferte speciale flori.",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {
+    "sass": "^1.89.0"
+  }
+}

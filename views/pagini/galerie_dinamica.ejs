@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <title>Galerie Dinamică</title>
+  <link rel="stylesheet" href="/resurse/css/galerie.css" />
+</head>
+<body>
+<div class="gallery-container">
+  <% images.forEach((img, index) => { %>
+    <div class="gallery-frame" style="
+      <% if(index === 0) { %>
+        clip-path: inset(0 0 0 0);
+        opacity: 1;
+        z-index: 2;
+      <% } else { %>
+        clip-path: inset(0 50% 0 50%);
+        opacity: 0;
+        z-index: 0;
+      <% } %>
+    ">
+      <img src="<%= caleGalerie + img.cale_relativa %>" alt="<%= img.alternativ || img.nume_imag %>" />
+      
+      <!-- Title bar -->
+      <div class="title-bar">
+        <%= img.nume_imag || 'Untitled' %>
+      </div>
+    </div>
+  <% }) %>
+</div>
+
+
+
+
+<!-- restul HTML/EJS -->
+
+<script>
+ const frames = document.querySelectorAll('.gallery-frame');
+let current = 0;
+
+function showNext() {
+  const prev = current;
+  current = (current + 1) % frames.length;
+
+  // Imaginea veche rămâne complet vizibilă pe margini
+  frames[prev].style.clipPath = 'inset(0 0 0 0)';
+  frames[prev].style.opacity = '1';
+  frames[prev].style.zIndex = '2';
+
+  // Imaginea nouă începe cu clip-path restrâns în centru și opacitate 0
+  frames[current].style.clipPath = 'inset(0 50% 0 50%)';
+  frames[current].style.opacity = '0';
+  frames[current].style.zIndex = '2';
+
+  // Forțează reflow pentru restart animație
+  void frames[current].offsetWidth;
+
+  // Animația extinde clip-path și crește opacitatea
+  frames[current].style.transition = 'clip-path 3s ease, opacity 3s ease';
+  frames[current].style.clipPath = 'inset(0 0 0 0)';
+  frames[current].style.opacity = '1';
+
+  // După animație, curăță stilurile pentru următorul ciclu
+  setTimeout(() => {
+    frames[prev].style.opacity = '0';
+    frames[prev].style.zIndex = '0';
+    frames[prev].style.transition = '';
+    frames[current].style.transition = '';
+  }, 3000);
+}
+
+setInterval(showNext, 4000);
+
+</script>
+</body>
+</html>
+
+
+</body>
+</html>

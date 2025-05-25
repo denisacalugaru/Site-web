@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <%- include('../fragmente/head') %>
+<body id="top">
+
+  <%- include('../fragmente/header') %>
+
+  <main>
+    <section id="galerie">
+      <h2>Galeria noastră de imagini</h2>
+
+      <!-- Include fragmentul galeriei și transmite variabilele -->
+      <%- include('../fragmente/galerie', { cale_galerie: cale_galerie, imagini: imagini }) %>
+
+    </section>
+  </main>
+
+  <%- include('../fragmente/footer') %>
+
+</body>
+</html>

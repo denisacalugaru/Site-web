@@ -1,0 +1,183 @@
+.watermark {
+  display: none; /* ascunde watermark-ul pe ecran */
+}
+
+@media print {
+  .watermark {
+    display: flex !important; /* afișează watermark-ul la print */
+    position: fixed !important;
+    bottom: 0.5cm !important;
+    right: 0.5cm !important;
+    width: 4cm !important;           /* lățimea watermark-ului */
+    height: 1cm !important;          /* înălțimea watermark-ului */
+    border: 3px solid black !important; /* border solid negru de 3px */
+    border-radius: 0.5rem !important;   /* colțuri rotunjite */
+    opacity: 0.4 !important;            /* opacitate 0.4 */
+    font-weight: bold !important;       /* text bold */
+    text-align: center !important;
+    background: white !important;
+    white-space: pre-line !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    line-height: 1rem !important;
+    font-size: 1rem !important;
+    z-index: 9999 !important;
+    pointer-events: none !important;
+  }
+}
+/* CERINȚA 6: Watermark pe fiecare pagină, în colțul din dreapta jos, cu stilul cerut */
+
+.banner-print {
+  display: none;
+}
+/* Ascunde bannerul pe ecran (cerință generală, dar nu și la print) */
+
+@page :first {
+  margin-bottom: 5cm; /* lasă spațiu jos pentru banner pe prima pagină */
+
+  @bottom-center {
+     content: "Acesta este un proiect școlar!";
+    width: 70vw; /* 70% din lățimea paginii */
+    border: 4px inset black;
+    background: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 0.5rem 0;
+    box-sizing: border-box;
+    margin: 0 auto;
+    font-size: 1rem;
+    color: black;
+  }
+}
+/* CERINȚA 1: Banner jos pe prima pagină (atenție: @bottom-center NU e suportat în Chrome, doar în browsere speciale sau Firefox cu flaguri) */
+
+@media print {
+  /* Ascunde orice alt banner în conținut */
+  .banner-print {
+    display: none !important;
+  }
+}
+/* CERINȚA 1: Ascunde bannerul din conținut la print */
+
+@media print {
+  /* Ascunde elementele media */
+  img,
+  video,
+  iframe,
+  picture,
+  embed,
+  object,
+  figcaption {
+    display: none !important;
+  }
+
+  /* Ascunde linkurile către începutul paginii */
+  a[href="#top"],
+  a[href="#start"],
+  .link-to-top,
+  #link-to-top {
+    display: none !important;
+  }
+}
+/* CERINȚA 2: Ascunde imaginile, video, iframe, etc. și linkurile către începutul paginii */
+
+@media print {
+  .grid-container {
+    display: block !important;
+  }
+}
+/* CERINȚA 3: Gridul să fie afișat ca block la print */
+
+@media print {
+  a {
+    color: inherit !important;       /* moștenește culoarea textului normal */
+    text-decoration: none !important; /* elimină sublinierea */
+    cursor: default !important;      /* cursor normal la hover */
+  }
+}
+/* CERINȚA 4: Linkurile să fie afișate ca text normal (fără subliniere, fără culoare diferită) */
+
+header h1 {
+  text-align: center;
+}
+/* CERINȚA 5: Headingul de nivel 1 centrat */
+
+@media print {
+  /* Resetează stilurile meniului pentru print */
+  #variante-meniu {
+    position: static !important;
+    z-index: auto !important;
+    background: none !important;
+    box-shadow: none !important;
+    width: fit-content !important;
+    margin: 0 auto !important; /* centrează meniul */
+    padding: 0 !important;
+  }
+
+  /* Resetează stilul header-ului pentru print */
+  header {
+    display: block !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    text-align: center !important; /* centrează conținutul */
+  }
+
+  /* Meniul principal */
+  .main-menu {
+    display: block !important;
+    list-style: none !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    width: fit-content !important;
+  }
+
+  /* Fiecare element de meniu */
+  .menu-item {
+    display: list-item !important;
+    margin: 0.5em 0 !important;
+    font-weight: bold !important;
+    font-size: 1.1em !important;
+    text-align: left !important;
+  }
+
+  /* Ascunde submeniurile */
+  .main-menu .submenu {
+    display: none !important;
+  }
+
+  /* Ascunde meniul mobil */
+  .menu-drawer,
+  #menu-toggle,
+  #burger {
+    display: none !important;
+  }
+
+  /* Page break după meniu și înainte de footer */
+  .break-print {
+    break-after: page !important;
+    page-break-after: always !important;
+  }
+}
+/* CERINȚA 5: Meniul sub heading, opțiuni principale vertical, fără submeniuri, page break după meniu și înainte de footer */
+
+@media print {
+  /* Margini pentru paginile din stânga */
+  @page :left {
+    margin-left: 3cm;
+    margin-right: 1cm;
+    margin-top: 2cm;    /* poți ajusta după nevoie */
+    margin-bottom: 2cm; /* poți ajusta după nevoie */
+  }
+
+  /* Margini pentru paginile din dreapta */
+  @page :right {
+    margin-left: 1cm;
+    margin-right: 3cm;
+    margin-top: 2cm;
+    margin-bottom: 2cm;
+  }
+}
+/* CERINȚA 7: Margini diferite pentru paginile din stânga și din dreapta */
