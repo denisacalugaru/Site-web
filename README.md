@@ -44,7 +44,7 @@ Meniuri Semantice: Navigare dropdown construită pe baza elementelor HTML5 <deta
 MathML: Proiectul include suport pentru redarea ecuațiilor și simbolurilor matematice în secțiunile de statistici, utilizând tag-uri precum <math>, <mi>, <mn> și <mo>, stilizate pentru a se potrivi cu tema vizuală a site-ului.
 
 Tehnologii și Standarde
-HTML5 & CSS3: Respectarea standardelor W3C pentru accesibilitate și SEO.
+HTML5 si CSS3: Respectarea standardelor W3C pentru accesibilitate și SEO.
 
 Variable Scope: Utilizarea variabilelor globale pentru temă (Primary, Secondary, Tertiary Colors).
 
